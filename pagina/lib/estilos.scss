@@ -1,0 +1,70 @@
+/*modo oscuro*/
+$negro: #111111;
+$blanco:#FEFEFE;
+$amarillo:#ffc107;
+$sombraDark: 10px 10px 20px rgba(170,170,170,.16);
+$sombraLight: 10px 10px 20px rgba(0,0,0,.16);
+
+body {
+    background: $blanco;
+    font-family: 'Syne Mono', monospace;
+    font-size: 1.2rem;
+    transition: .3s ease all;
+    &.dark {
+        h5{
+            color: $amarillo;
+        }
+        h2{
+            font-family: 'Syne Mono', monospace;
+            font-size: 1.3rem;
+            text-align: center;
+            font-weight: bold;
+            color: $amarillo;
+        }
+        p{
+            color: $amarillo;
+        }
+        color: 	$amarillo;
+        background: $negro;
+    }
+}
+
+.switch{
+    background: #151c33;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+    &::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background: $blanco;
+        top: 1px;
+        left: 0;
+        right: unset;
+        border-radius: 100px;
+        transition: .3s ease all;
+        box-shadow: 0px 0px 2px 2px rgba(0,0,0,.2);
+    }
+    &.active {
+        background: $amarillo;
+        color: $negro;
+        &::after {
+            right: 0;
+            left: unset;
+        }
+    }
+    span {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        display: block;
+        background: none;
+        color: $blanco;
+    }
+}
